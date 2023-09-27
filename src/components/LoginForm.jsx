@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import  Button  from "./Button";
-import { CurrentUserContext } from "../App";
+import { useState } from "react";
+import Button from "./Button";
+import { useUser } from "../context/UserContext";
 
 export default function LoginForm() {
-  const { setCurrentUser } = useContext(CurrentUserContext);
+  const { setCurrentUser } = useUser();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const canLogin = firstName !== "" && lastName !== "";

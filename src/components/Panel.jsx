@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { ThemeContext } from "../App";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Panel({ title, children }) {
-  const theme = useContext(ThemeContext);
+  const { theme } = useTheme();
   const className = "panel-" + theme;
   return (
     <section className={className}>
